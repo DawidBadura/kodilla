@@ -36,8 +36,8 @@ public class ShapeCollectorTestSuite {
 
         //Then
         Assert.assertEquals(new Circle(10), testShape);
-        Assert.assertEquals(null, testShape1);
-        Assert.assertEquals(null, testShape2);
+        Assert.assertNull(testShape1);
+        Assert.assertNull(testShape2);
 
 
     }
