@@ -14,7 +14,7 @@ public class FlySearcher {
         airports.put("Pyrzowice",false);
         airports.put("Lawica",true);
         airports.put("Jesionka",true);
-        if(airports.keySet().contains(flight.getArrivalAirport())&&airports.get(flight.arrivalAirport)) {
+        if(airports.containsKey(flight.getArrivalAirport())&&airports.get(flight.arrivalAirport)) {
             System.out.println(flight.getArrivalAirport()+" is availible");
         }
         else {
