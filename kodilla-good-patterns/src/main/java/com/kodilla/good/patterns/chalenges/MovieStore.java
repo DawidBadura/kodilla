@@ -1,4 +1,4 @@
-package com.kodilla.good.patterns;
+package com.kodilla.good.patterns.chalenges;
 
 import java.util.*;
 import java.util.stream.Collectors;
