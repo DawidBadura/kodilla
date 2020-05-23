@@ -7,5 +7,3 @@ public interface PaymantSerwice {
         return true;
     }
 }
-
-
