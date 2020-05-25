@@ -59,6 +59,6 @@ public class Flight {
                 ", arrival: " + arrival +
                 " departure time: " + departureTime.format(formatter) +
                 ", arrival time: " + arrivalTime.format(formatter) +
-                "  ";
+                "\n";
     }
 }

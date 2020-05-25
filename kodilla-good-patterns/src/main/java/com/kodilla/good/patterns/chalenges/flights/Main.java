@@ -15,7 +15,7 @@ public class Main {
 
 
         System.out.println(flightsService.flySearcher("Moskwa","Londyn"));
-        System.out.println(flightsService.flySearcher("Moskwa","Londyn", "Kraków"));
+
 
 
 
