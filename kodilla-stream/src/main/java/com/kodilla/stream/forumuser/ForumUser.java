@@ -17,6 +17,7 @@ public final class ForumUser {
         this.publishedPosts = publishedPosts;
     }
 
+
     public int getId() {
         return id;
     }
