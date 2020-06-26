@@ -16,7 +16,7 @@ public class TaskListDaoTestSuite {
 
     @Autowired
     private TaskListDao taskListDao;
-    private static final String DESCRIPTION="Test for TaskList written by me";
+    private static final String DESCRIPTION="Test for TaskList";
 
     @Test
     public void testFindByListName(){

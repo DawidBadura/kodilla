@@ -19,7 +19,6 @@ public class TaskList {
     }
 
 
-
     @Id
     @GeneratedValue
     @NotNull
@@ -28,22 +27,22 @@ public class TaskList {
         return id;
     }
 
-    private void setId(int id) {
-        this.id = id;
-    }
-
     @Column(name = "LIST NAME")
     public String getListName() {
         return listName;
     }
 
-    private void setListName(String listName) {
-        this.listName = listName;
-    }
-
     @Column(name = "DESCRIPTION")
     public String getDescription() {
         return description;
+    }
+
+    private void setId(int id) {
+        this.id = id;
+    }
+
+    private void setListName(String listName) {
+        this.listName = listName;
     }
 
     private void setDescription(String description) {
