@@ -18,6 +18,8 @@ public class InvoiceDaoTestSuite {
 
     @Autowired
     InvoiceDao invoiceDao;
+    @Autowired
+    ItemDao itemDao;
     @Test
     public void testTaskListDaoSaveWithTasks() {
         //Given
@@ -59,14 +61,13 @@ public class InvoiceDaoTestSuite {
         //When
 
         invoiceDao.save(invoice);
-        int id = item.getId();
+        int id = invoice.getId();
         invoiceDao.save(invoice1);
-        int id1 = item1.getId();
-
+        int id1 = invoice1.getId();
 
         //Then
         Assert.assertNotEquals(0, id);
-
+        Assert.assertEquals(2,invoiceDao.count());
         //CleanUp
         invoiceDao.deleteById(id);
         invoiceDao.deleteById(id1);

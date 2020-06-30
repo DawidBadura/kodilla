@@ -31,29 +31,29 @@ public class Item {
         return id;
     }
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="PRODUCT_ID")
     public Product getProduct() {
         return product;
     }
 
     @NotNull
-    @Column(name = "ITEM_PRICE", unique = true)
+    @Column(name = "ITEM_PRICE")
     public BigDecimal getPrice() {
         return price;
     }
 
-    @Column(name = "ITEM_QUANTITY", unique = true)
+    @Column(name = "ITEM_QUANTITY")
     public int getQuantity() {
         return quantity;
     }
 
-    @Column(name = "ITEM_VALUE", unique = true)
+    @Column(name = "ITEM_VALUE")
     public BigDecimal getValue() {
         return value;
     }
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="INVOICE_ID")
     public Invoice getInvoice() {
         return invoice;

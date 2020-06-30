@@ -27,7 +27,6 @@ public class Invoice {
         return id;
     }
 
-    @NotNull
     @Column(name = "NUMBER")
     public String getNumber() {
         return number;
