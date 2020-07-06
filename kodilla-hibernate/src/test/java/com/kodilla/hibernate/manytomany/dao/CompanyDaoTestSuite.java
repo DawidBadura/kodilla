@@ -96,7 +96,7 @@ public class CompanyDaoTestSuite {
 
         //When
 
-        List<Company> resultsList=companyDao.retrieveCompaniesByFirstLetters("Sof%");
+        List<Company> resultsList=companyDao.retrieveCompaniesByFirstLetters("Sof");
 
         //Then
         Assert.assertEquals(1, resultsList.size());
