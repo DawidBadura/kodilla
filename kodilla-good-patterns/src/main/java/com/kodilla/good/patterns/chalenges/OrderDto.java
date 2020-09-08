@@ -1,8 +1,8 @@
 package com.kodilla.good.patterns.chalenges;
 
 public class OrderDto {
-    private  User user;
-    private  boolean translactionConfirmed;
+    private User user;
+    private boolean translactionConfirmed;
 
     public OrderDto(User user, boolean translactionConfirmed) {
         this.user = user;

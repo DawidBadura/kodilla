@@ -31,6 +31,7 @@ public class Invoice {
     public String getNumber() {
         return number;
     }
+
     @OneToMany(
             targetEntity = Item.class,
             mappedBy = "invoice",

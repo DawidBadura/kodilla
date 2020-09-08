@@ -11,13 +11,13 @@ public class ShoppingTask implements Task {
         this.taskName = taskName;
         this.whatToBuy = whatToBuy;
         this.quantity = quantity;
-        this.executed=false;
+        this.executed = false;
     }
 
     @Override
     public void executeTask() {
         System.out.println("shopping task done");
-        executed=true;
+        executed = true;
     }
 
     @Override

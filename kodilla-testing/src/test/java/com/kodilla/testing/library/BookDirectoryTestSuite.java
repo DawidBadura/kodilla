@@ -36,7 +36,6 @@ public class BookDirectoryTestSuite {
     }
 
 
-
     @Test
     public void testListBooksWithConditionMoreThan20() {
 // Given
@@ -79,12 +78,13 @@ public class BookDirectoryTestSuite {
         Assert.assertEquals(0, theListOfBooks10.size());
         verify(libraryDatabaseMock, times(0)).listBooksWithCondition(anyString());
     }
+
     @Test
-    public void testListBooksInUserHands(){
+    public void testListBooksInUserHands() {
         // Given
-        LibraryUser libraryUser = new LibraryUser("john","den","3323");
-        LibraryUser libraryUser2 = new LibraryUser("johny","deny","33253");
-        LibraryUser libraryUser3 = new LibraryUser("johna","dena","32323");
+        LibraryUser libraryUser = new LibraryUser("john", "den", "3323");
+        LibraryUser libraryUser2 = new LibraryUser("johny", "deny", "33253");
+        LibraryUser libraryUser3 = new LibraryUser("johna", "dena", "32323");
         LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
         List<Book> resultListOf0Books = new ArrayList<Book>();

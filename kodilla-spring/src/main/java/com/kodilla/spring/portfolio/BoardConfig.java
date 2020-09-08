@@ -29,11 +29,13 @@ public class BoardConfig {
     public TaskList getTaskToDo() {
         return new TaskList();
     }
+
     @Bean(name = "inProgressList")
     @Scope("prototype")
     public TaskList getTaskInProgress() {
         return new TaskList();
     }
+
     @Bean(name = "doneList")
     @Scope("prototype")
     public TaskList getTaskDone() {

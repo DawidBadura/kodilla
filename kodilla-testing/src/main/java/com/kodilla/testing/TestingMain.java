@@ -1,7 +1,7 @@
 package com.kodilla.testing;
 
 public class TestingMain {
-public static void main(String[] args) {/*
+    public static void main(String[] args) {/*
     SimpleUser simpleUser = new SimpleUser("theForumUser");
 
     String result = simpleUser.getUsername();
@@ -31,5 +31,5 @@ public static void main(String[] args) {/*
     else{
         System.out.println("subtract Error!");
     }*/
-}
+    }
 }

@@ -17,6 +17,7 @@ public class DbManagerTestSuite {
         //Then
         Assert.assertNotNull(dbManager.getConnection());
     }
+
     @Test
     public void testSelectUsers() throws SQLException {
         //Given
@@ -29,7 +30,7 @@ public class DbManagerTestSuite {
 
         //Then
         int counter = 0;
-        while(rs.next()) {
+        while (rs.next()) {
             System.out.println(rs.getInt("ID") + ", " +
                     rs.getString("FIRSTNAME") + ", " +
                     rs.getString("LASTNAME"));
@@ -39,6 +40,7 @@ public class DbManagerTestSuite {
         statement.close();
         Assert.assertEquals(5, counter);
     }
+
     @Test
     public void testSelectUsersAndPosts() throws SQLException {
         //Given
@@ -54,7 +56,7 @@ public class DbManagerTestSuite {
 
         //Then
         int counter = 0;
-        while(rs.next()) {
+        while (rs.next()) {
             System.out.println(rs.getString("FIRSTNAME") + ", " +
                     rs.getString("LASTNAME") + ", " +
                     rs.getInt("POSTS_NUMBER"));

@@ -20,6 +20,7 @@ public class InvoiceDaoTestSuite {
     InvoiceDao invoiceDao;
     @Autowired
     ItemDao itemDao;
+
     @Test
     public void testTaskListDaoSaveWithTasks() {
         //Given
@@ -27,10 +28,10 @@ public class InvoiceDaoTestSuite {
         Invoice invoice = new Invoice("12");
         Invoice invoice1 = new Invoice("2");
 
-        Item item = new Item(new BigDecimal(333.3),2);
-        Item item1 = new Item(new BigDecimal(333.3),1);
-        Item item2 = new Item(new BigDecimal(553.3),1);
-        Item item3 = new Item(new BigDecimal(33.3),28);
+        Item item = new Item(new BigDecimal(333.3), 2);
+        Item item1 = new Item(new BigDecimal(333.3), 1);
+        Item item2 = new Item(new BigDecimal(553.3), 1);
+        Item item3 = new Item(new BigDecimal(33.3), 28);
 
         Product product = new Product("Wykalaczki");
         Product product1 = new Product("IPhone6");
@@ -67,7 +68,7 @@ public class InvoiceDaoTestSuite {
 
         //Then
         Assert.assertNotEquals(0, id);
-        Assert.assertEquals(2,invoiceDao.count());
+        Assert.assertEquals(2, invoiceDao.count());
         //CleanUp
         invoiceDao.deleteById(id);
         invoiceDao.deleteById(id1);

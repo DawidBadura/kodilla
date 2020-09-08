@@ -9,7 +9,7 @@ public class TaskFactory {
     public final Task executeTask(final String taskClass) {
         switch (taskClass) {
             case SHOPPING_TASK:
-                ShoppingTask shoppingTask = new ShoppingTask("shoptask", "fish",22.2);
+                ShoppingTask shoppingTask = new ShoppingTask("shoptask", "fish", 22.2);
                 shoppingTask.executeTask();
                 return shoppingTask;
             case PAINTING_TASK:

@@ -11,12 +11,16 @@ import java.util.List;
                 " WHERE LEFT(COMPANY_NAME, 3)= :NAME",
         resultClass = Company.class
 )
+@NamedQuery(
+        name = "Company.retrieveCompaniesByFragment",
+        query = "FROM Company WHERE name LIKE :FRAGMENT"
+)
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
     private int id;
     private String name;
-    private List<Employee>employees=new ArrayList<>();
+    private List<Employee> employees = new ArrayList<>();
 
     public Company() {
     }
@@ -39,7 +43,7 @@ public class Company {
         return name;
     }
 
-    @ManyToMany(cascade = CascadeType.ALL ,mappedBy = "companies")
+    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "companies")
     public List<Employee> getEmployees() {
         return employees;
     }

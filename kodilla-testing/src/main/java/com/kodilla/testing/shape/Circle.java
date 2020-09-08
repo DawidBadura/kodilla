@@ -4,7 +4,7 @@ import java.util.Objects;
 
 import static java.lang.Math.*;
 
-public class Circle implements Shape{
+public class Circle implements Shape {
     private double r;
 
     public Circle(int r) {
@@ -14,8 +14,9 @@ public class Circle implements Shape{
     public String getShapeName() {
         return "Circle";
     }
+
     public double getField() {
-        return PI *r*r;
+        return PI * r * r;
     }
 
     @Override

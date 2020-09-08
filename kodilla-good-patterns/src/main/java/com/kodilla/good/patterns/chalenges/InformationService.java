@@ -1,7 +1,7 @@
 package com.kodilla.good.patterns.chalenges;
 
 public interface InformationService {
-    default void inform(User customer){
+    default void inform(User customer) {
 
     }
 }

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+
 @Transactional
 @Repository
 public interface TaskDao extends CrudRepository<Task, Integer> {
@@ -19,7 +20,7 @@ public interface TaskDao extends CrudRepository<Task, Integer> {
     @Query
     List<Task> retrieveShortTasks();
 
-    @Query(nativeQuery=true)
+    @Query(nativeQuery = true)
     List<Task> retrieveTasksWithEnoughTime();
 
     @Query

@@ -24,25 +24,26 @@ public class TaskListDaoTestSuite {
     @Autowired
     private TaskDao taskDao;
 
-    private static final String DESCRIPTION="Test for TaskList";
+    private static final String DESCRIPTION = "Test for TaskList";
 
     @Test
-    public void testFindByListName(){
+    public void testFindByListName() {
         //Given
-        TaskList taskList=new TaskList("MyList",DESCRIPTION);
+        TaskList taskList = new TaskList("MyList", DESCRIPTION);
         taskListDao.save(taskList);
-        String listName=taskList.getListName();
+        String listName = taskList.getListName();
 
         //When
-        List<TaskList>readTaskList=taskListDao.findByListName(listName);
+        List<TaskList> readTaskList = taskListDao.findByListName(listName);
 
         //Then
-        Assert.assertEquals(1,readTaskList.size());
+        Assert.assertEquals(1, readTaskList.size());
 
         //CleanUp
         int id = readTaskList.get(0).getId();
         taskListDao.deleteById(id);
     }
+
     @Test
     public void testTaskListDaoSaveWithTasks() {
         //Given
@@ -68,6 +69,7 @@ public class TaskListDaoTestSuite {
         //CleanUp
         taskListDao.deleteById(id);
     }
+
     @Test
     public void testNamedQueries() {
         //Given

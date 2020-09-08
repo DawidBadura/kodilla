@@ -11,14 +11,14 @@ public class PaintingTask implements Task {
         this.taskName = taskName;
         this.color = color;
         this.whatToPaint = whatToPaint;
-        this.executed=false;
+        this.executed = false;
 
     }
 
     @Override
     public void executeTask() {
         System.out.println("painting task done");
-        executed=true;
+        executed = true;
     }
 
     @Override

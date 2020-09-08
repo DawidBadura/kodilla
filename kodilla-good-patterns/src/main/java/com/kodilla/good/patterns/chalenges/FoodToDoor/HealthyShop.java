@@ -5,16 +5,17 @@ public class HealthyShop implements ProcessShop {
     public boolean process(Order order) {
         System.out.println("HealthyShop");
 
-        if(checkIfAvailiable(order.getProductName(),order.getQuantity())){
+        if (checkIfAvailiable(order.getProductName(), order.getQuantity())) {
             sendEmail(order.getUserEmail());
             return true;
-        }
-        else return false;
+        } else return false;
     }
-    boolean checkIfAvailiable(String prodName,int numbOfProd){
+
+    boolean checkIfAvailiable(String prodName, int numbOfProd) {
         return true;
     }
-    void sendEmail(String email){
+
+    void sendEmail(String email) {
 
     }
 }

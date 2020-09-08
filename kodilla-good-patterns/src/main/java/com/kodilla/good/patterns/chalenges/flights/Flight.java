@@ -11,11 +11,11 @@ public class Flight {
     private LocalDateTime arrivalTime;
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d MMM HH:mm");
 
-    public Flight(String departure, String arrival, int year,int month, int depDay,
+    public Flight(String departure, String arrival, int year, int month, int depDay,
                   int depHour, int depMin, int flightDuration) {
         this.departure = departure;
         this.arrival = arrival;
-        this.departureTime=LocalDateTime.of(year, month, depDay, depHour, depMin);
+        this.departureTime = LocalDateTime.of(year, month, depDay, depHour, depMin);
         this.arrivalTime = this.departureTime.plusMinutes(flightDuration);
     }
 
@@ -25,10 +25,10 @@ public class Flight {
         if (o == null || getClass() != o.getClass()) return false;
         Flight flight = (Flight) o;
         return Objects.equals(departure, flight.departure) &&
-                Objects.equals(arrival, flight.arrival)&&
-                Objects.equals(departureTime, flight.departureTime)&&
-                Objects.equals(arrivalTime,flight.arrivalTime)
-        ;
+                Objects.equals(arrival, flight.arrival) &&
+                Objects.equals(departureTime, flight.departureTime) &&
+                Objects.equals(arrivalTime, flight.arrivalTime)
+                ;
     }
 
     @Override
@@ -44,11 +44,11 @@ public class Flight {
         return arrival;
     }
 
-    public  LocalDateTime getDepartureTime() {
+    public LocalDateTime getDepartureTime() {
         return departureTime;
     }
 
-    public  LocalDateTime getArrivalTime() {
+    public LocalDateTime getArrivalTime() {
         return arrivalTime;
     }
 

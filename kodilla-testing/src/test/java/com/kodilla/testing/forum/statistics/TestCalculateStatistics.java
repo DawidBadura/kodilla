@@ -50,10 +50,11 @@ public class TestCalculateStatistics {
         statisticsCalculator.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assert.assertEquals(10,statisticsCalculator.getComentsForPost(),1e-8);
-        Assert.assertEquals(0,statisticsCalculator.getCommentsForUser(),1e-8);
-        Assert.assertEquals(0,statisticsCalculator.getPostsForUser(),1e-8);
+        Assert.assertEquals(10, statisticsCalculator.getComentsForPost(), 1e-8);
+        Assert.assertEquals(0, statisticsCalculator.getCommentsForUser(), 1e-8);
+        Assert.assertEquals(0, statisticsCalculator.getPostsForUser(), 1e-8);
     }
+
     @Test
     public void testStatistics0comments() {
 
@@ -71,10 +72,11 @@ public class TestCalculateStatistics {
         statisticsCalculator.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assert.assertEquals(0,statisticsCalculator.getComentsForPost(),1e-8);
-        Assert.assertEquals(0,statisticsCalculator.getCommentsForUser(),1e-8);
-        Assert.assertEquals(0.1,statisticsCalculator.getPostsForUser(),1e-8);
+        Assert.assertEquals(0, statisticsCalculator.getComentsForPost(), 1e-8);
+        Assert.assertEquals(0, statisticsCalculator.getCommentsForUser(), 1e-8);
+        Assert.assertEquals(0.1, statisticsCalculator.getPostsForUser(), 1e-8);
     }
+
     @Test
     public void testStatistics0posts() {
 
@@ -92,10 +94,11 @@ public class TestCalculateStatistics {
         statisticsCalculator.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assert.assertEquals(0,statisticsCalculator.getComentsForPost(),1e-8);
-        Assert.assertEquals(0.2,statisticsCalculator.getCommentsForUser(),1e-8);
-        Assert.assertEquals(0,statisticsCalculator.getPostsForUser(),1e-8);
+        Assert.assertEquals(0, statisticsCalculator.getComentsForPost(), 1e-8);
+        Assert.assertEquals(0.2, statisticsCalculator.getCommentsForUser(), 1e-8);
+        Assert.assertEquals(0, statisticsCalculator.getPostsForUser(), 1e-8);
     }
+
     @Test
     public void testStatisticsmorecommetsthanposts() {
 
@@ -113,9 +116,9 @@ public class TestCalculateStatistics {
         statisticsCalculator.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assert.assertEquals(10,statisticsCalculator.getComentsForPost(),1e-8);
-        Assert.assertEquals(50,statisticsCalculator.getCommentsForUser(),1e-8);
-        Assert.assertEquals(5,statisticsCalculator.getPostsForUser(),1e-8);
+        Assert.assertEquals(10, statisticsCalculator.getComentsForPost(), 1e-8);
+        Assert.assertEquals(50, statisticsCalculator.getCommentsForUser(), 1e-8);
+        Assert.assertEquals(5, statisticsCalculator.getPostsForUser(), 1e-8);
     }
 
 

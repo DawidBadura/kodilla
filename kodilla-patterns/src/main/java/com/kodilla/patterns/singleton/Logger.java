@@ -2,7 +2,7 @@ package com.kodilla.patterns.singleton;
 
 public class Logger {
     private String lastLog = "";
-    private static Logger loggerInstance=null;
+    private static Logger loggerInstance = null;
 
     public Logger() {
     }

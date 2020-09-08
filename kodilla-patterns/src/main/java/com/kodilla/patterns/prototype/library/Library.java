@@ -26,15 +26,16 @@ public final class Library extends Prototype {
     public Set<Book> getBooks() {
         return books;
     }
+
     public Library shallowCopy() throws CloneNotSupportedException {
-        return (Library)super.clone();
+        return (Library) super.clone();
     }
 
     public Library deepCopy() throws CloneNotSupportedException {
-        Library clonedLibrary = (Library)super.clone();
+        Library clonedLibrary = (Library) super.clone();
         clonedLibrary.books = new HashSet<>();
-        for(Book theList : books) {
-            Book clonedBook = new Book(theList.getTitle(),theList.getAuthor(),theList.getPublicationDate());
+        for (Book theList : books) {
+            Book clonedBook = new Book(theList.getTitle(), theList.getAuthor(), theList.getPublicationDate());
             clonedLibrary.getBooks().add(clonedBook);
         }
         return clonedLibrary;

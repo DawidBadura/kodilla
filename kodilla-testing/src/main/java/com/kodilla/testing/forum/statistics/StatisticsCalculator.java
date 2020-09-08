@@ -8,28 +8,25 @@ public class StatisticsCalculator {
     double commentsForUser;
     double comentsForPost;
 
-    public void calculateAdvStatistics(Statistics statistics){
+    public void calculateAdvStatistics(Statistics statistics) {
         this.numberOfUsers = statistics.usersNames().size();
         this.numberOfPosts = statistics.postsCount();
         this.numberOfComments = statistics.commentsCount();
 
-        if (numberOfUsers!=0&&numberOfPosts!=0) {
+        if (numberOfUsers != 0 && numberOfPosts != 0) {
             postsForUser = (double) numberOfPosts / (double) numberOfUsers;
-        }
-        else {
+        } else {
             postsForUser = 0;
         }
 
-        if (numberOfComments!=0&&numberOfPosts!=0) {
-            comentsForPost = (double)numberOfComments/(double)numberOfPosts;
-        }
-        else {
+        if (numberOfComments != 0 && numberOfPosts != 0) {
+            comentsForPost = (double) numberOfComments / (double) numberOfPosts;
+        } else {
             comentsForPost = 0;
         }
-        if (numberOfUsers!=0&&numberOfComments!=0) {
-            commentsForUser= (double)numberOfComments/(double)numberOfUsers;
-        }
-        else {
+        if (numberOfUsers != 0 && numberOfComments != 0) {
+            commentsForUser = (double) numberOfComments / (double) numberOfUsers;
+        } else {
             commentsForUser = 0;
         }
     }

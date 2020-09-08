@@ -17,7 +17,7 @@ public class LibraryTestSuite {
         Set<Book> books = new HashSet<>();
         IntStream.iterate(1, n -> n + 1)
                 .limit(10)
-                .forEach(n -> books.add(new Book("book number "+n,"john"+n,LocalDate.now())));
+                .forEach(n -> books.add(new Book("book number " + n, "john" + n, LocalDate.now())));
 
 
         Library library = new Library("Project number 1");
@@ -43,7 +43,7 @@ public class LibraryTestSuite {
 
         //When
 
-        deepClonedLibrary.getBooks().add(new Book("34","11",LocalDate.now()));
+        deepClonedLibrary.getBooks().add(new Book("34", "11", LocalDate.now()));
 
         //Then
 

@@ -2,7 +2,7 @@ package com.kodilla.testing.shape;
 
 import java.util.Objects;
 
-public class Triangle implements Shape{
+public class Triangle implements Shape {
     double a, h;
 
     public Triangle(double a, double h) {
@@ -17,7 +17,7 @@ public class Triangle implements Shape{
 
     @Override
     public double getField() {
-        return a*h/2;
+        return a * h / 2;
     }
 
     @Override

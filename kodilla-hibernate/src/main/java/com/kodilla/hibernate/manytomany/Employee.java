@@ -4,11 +4,16 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
-
-@NamedQuery(
-        name = "Employee.retrieveEmployeesBySecondname",
-        query = "FROM Employee WHERE lastname = :LASTNAME"
-)
+@NamedQueries({
+        @NamedQuery(
+                name = "Employee.retrieveEmployeesBySecondname",
+                query = "FROM Employee WHERE lastname = :LASTNAME"
+        ),
+        @NamedQuery(
+                name = "Employee.retrieveEmployeesByFragment",
+                query = "FROM Employee WHERE lastname LIKE :FRAGMENT"
+        )
+})
 
 @Entity
 @Table(name = "EMPLOYEES")
@@ -16,7 +21,7 @@ public class Employee {
     private int id;
     private String firstname;
     private String lastname;
-    List<Company>companies=new ArrayList<>();
+    List<Company> companies = new ArrayList<>();
 
     public Employee() {
     }

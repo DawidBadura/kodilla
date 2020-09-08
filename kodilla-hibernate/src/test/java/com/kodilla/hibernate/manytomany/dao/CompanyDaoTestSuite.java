@@ -2,6 +2,7 @@ package com.kodilla.hibernate.manytomany.dao;
 
 import com.kodilla.hibernate.manytomany.Company;
 import com.kodilla.hibernate.manytomany.Employee;
+import com.kodilla.hibernate.manytomany.facade.AgencyFacade;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,9 +19,11 @@ public class CompanyDaoTestSuite {
     CompanyDao companyDao;
     @Autowired
     EmployeeDao employeeDao;
+    @Autowired
+    AgencyFacade agencyFacade;
 
     @Test
-    public void testSaveManyToMany(){
+    public void testSaveManyToMany() {
         //Given
         Employee johnSmith = new Employee("John", "Smith");
         Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
@@ -55,17 +58,18 @@ public class CompanyDaoTestSuite {
         Assert.assertNotEquals(0, dataMaestersId);
         Assert.assertNotEquals(0, greyMatterId);
 
-        //CleanUp
+ /*       //CleanUp
         try {
             companyDao.deleteById(softwareMachineId);
             companyDao.deleteById(dataMaestersId);
             companyDao.deleteById(greyMatterId);
         } catch (Exception e) {
             //do nothing
-        }
+        }*/
     }
+
     @Test
-    public void testClassicNamedQuery(){
+    public void testClassicNamedQuery() {
         //Given
         Employee johnSmith = new Employee("John", "Smith");
         Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
@@ -96,10 +100,11 @@ public class CompanyDaoTestSuite {
 
         //When
 
-        List<Company> resultsList=companyDao.retrieveCompaniesByFirstLetters("Sof");
+        List<Company> resultsList = companyDao.retrieveCompaniesByFirstLetters("Sofs");
 
         //Then
-        Assert.assertEquals(1, resultsList.size());
+        Assert.assertEquals(0, resultsList.size());
+        Assert.assertEquals(0, employeeDao.retrieveEmployeesByFragment("%M%").size());
 
 
         //CleanUp
@@ -111,8 +116,9 @@ public class CompanyDaoTestSuite {
             //do nothing
         }
     }
+
     @Test
-    public void testNamedQuery(){
+    public void testNamedQuery() {
         //Given
         Employee johnSmith = new Employee("John", "Smith");
         Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
@@ -135,7 +141,6 @@ public class CompanyDaoTestSuite {
         greyMatter.getEmployees().add(lindaKovalsky);
 
 
-
         employeeDao.save(johnSmith);
         int id = johnSmith.getId();
         employeeDao.save(stephanieClarckson);
@@ -145,19 +150,44 @@ public class CompanyDaoTestSuite {
 
         //When
 
-        List<Employee> resultsList=employeeDao.retrieveEmployeesBySecondname("Clarcksn");
+        List<Employee> resultsList = employeeDao.retrieveEmployeesBySecondname("Clarcksn");
 
         //Then
         Assert.assertEquals(0, resultsList.size());
 
 
         //CleanUp
-        try {
+        /*try {
             employeeDao.deleteById(id);
             employeeDao.deleteById(id1);
             employeeDao.deleteById(id2);
         } catch (Exception e) {
             //do nothing
-        }
+        }*/
+    }
+    @Test
+    public void shouldFindByFragment(){
+        //Given
+        agencyFacade.addEmployee(new Employee("John", "Smith"));
+        agencyFacade.addEmployee(new Employee("Stephanie", "Clarckson"));
+        agencyFacade.addEmployee(new Employee("Linda", "Kovalsky"));
+        agencyFacade.addCompany(new Company("Software Machine"));
+        agencyFacade.addCompany(new Company("Data Maesters"));
+        agencyFacade.addCompany(new Company("Grey Matter"));
+
+
+        //When
+
+        List<Company> resultsListCompanies = agencyFacade.retreiveCompaniesBySigns("s");
+        List<Employee> resultListEmployees = agencyFacade.retreiveEmployeesBySigns("Clar");
+
+        //Then
+        Assert.assertEquals(1, resultListEmployees.size());
+        Assert.assertEquals(2, resultsListCompanies.size());
+
+
+        //CleanUp
+        agencyFacade.cleanCompanyEmployee();
+
     }
 }

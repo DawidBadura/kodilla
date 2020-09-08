@@ -16,7 +16,7 @@ public class BoardTestSuite {
         board.getToDoList().add("Task To Do");
         board.getDoneList().add("Task Done");
         //Then
-        System.out.println(board.getDoneList()+"\n"+board.getInProgressList()+"\n"+board.getToDoList());
+        System.out.println(board.getDoneList() + "\n" + board.getInProgressList() + "\n" + board.getToDoList());
 
     }
 

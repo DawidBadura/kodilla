@@ -1,12 +1,11 @@
 package com.kodilla.good.patterns.chalenges;
 
 public class User {
-    private  String firstName;
+    private String firstName;
     private String secondName;
     private String eMail;
     private String address;
     private int postalCode;
-
 
 
     public User(String firstName, String secondName, String eMail, String address, int postalCode) {

@@ -26,8 +26,9 @@ class MovieStore {
 
         return booksTitlesWithTranslations;
     }
-    static public String printBooks(){
-        return getMovies().entrySet().stream().flatMap(e->e.getValue().stream()).collect(Collectors.joining(" ! "));
+
+    static public String printBooks() {
+        return getMovies().entrySet().stream().flatMap(e -> e.getValue().stream()).collect(Collectors.joining(" ! "));
 
     }
 }

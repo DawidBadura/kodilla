@@ -16,11 +16,12 @@ public class Bigmac {
         this.ingredients = ingredients;
     }
 
-    public static class BigmacBuilder{
+    public static class BigmacBuilder {
         private String bun;
         private int burgers;
         private String sauce;
-        private List<String> ingredients=new ArrayList<>();
+        private List<String> ingredients = new ArrayList<>();
+
         public Bigmac.BigmacBuilder bun(String bun) {
             this.bun = bun;
             return this;
