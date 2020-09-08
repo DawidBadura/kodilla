@@ -104,7 +104,6 @@ public class CompanyDaoTestSuite {
 
         //Then
         Assert.assertEquals(0, resultsList.size());
-        Assert.assertEquals(0, employeeDao.retrieveEmployeesByFragment("%M%").size());
 
 
         //CleanUp
@@ -178,12 +177,12 @@ public class CompanyDaoTestSuite {
 
         //When
 
-        List<Company> resultsListCompanies = agencyFacade.retreiveCompaniesBySigns("s");
+        List<Company> resultsListCompanies = agencyFacade.retreiveCompaniesBySigns("Ma");
         List<Employee> resultListEmployees = agencyFacade.retreiveEmployeesBySigns("Clar");
 
         //Then
         Assert.assertEquals(1, resultListEmployees.size());
-        Assert.assertEquals(2, resultsListCompanies.size());
+        Assert.assertEquals(3, resultsListCompanies.size());
 
 
         //CleanUp
