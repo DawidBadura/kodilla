@@ -174,7 +174,6 @@ public class CompanyDaoTestSuite {
         agencyFacade.addCompany(new Company("Data Maesters"));
         agencyFacade.addCompany(new Company("Grey Matter"));
 
-
         //When
 
         List<Company> resultsListCompanies = agencyFacade.retreiveCompaniesBySigns("Ma");

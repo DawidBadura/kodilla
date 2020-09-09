@@ -13,7 +13,7 @@ import java.util.List;
 )
 @NamedQuery(
         name = "Company.retrieveCompaniesByFragment",
-        query = "FROM Company WHERE name LIKE :FRAGMENT"
+        query = "FROM Company WHERE name LIKE CONCAT('%',:FRAGMENT,'%')"
 )
 @Entity
 @Table(name = "COMPANIES")

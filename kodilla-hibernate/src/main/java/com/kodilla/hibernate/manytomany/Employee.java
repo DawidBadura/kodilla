@@ -11,7 +11,7 @@ import java.util.List;
         ),
         @NamedQuery(
                 name = "Employee.retrieveEmployeesByFragment",
-                query = "FROM Employee WHERE lastname LIKE :FRAGMENT"
+                query = "FROM Employee WHERE lastname LIKE CONCAT('%',:FRAGMENT,'%')"
         )
 })
 

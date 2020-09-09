@@ -37,11 +37,11 @@ public class AgencyFacade {
     }
 
     public List<Company> retreiveCompaniesBySigns(String signs){
-        return companyDao.retrieveCompaniesByFragment("%"+signs+"%");
+        return companyDao.retrieveCompaniesByFragment(signs);
     }
 
     public List<Employee> retreiveEmployeesBySigns(String signs){
-        return employeeDao.retrieveEmployeesByFragment("%"+signs+"%");
+        return employeeDao.retrieveEmployeesByFragment(signs);
     }
 
     public void cleanCompanyEmployee(){
