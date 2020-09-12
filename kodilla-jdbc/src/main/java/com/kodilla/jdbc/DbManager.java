@@ -1,4 +1,3 @@
-
 package com.kodilla.jdbc;
 
 import java.sql.Connection;
