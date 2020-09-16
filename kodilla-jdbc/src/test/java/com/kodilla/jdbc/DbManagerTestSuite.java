@@ -4,9 +4,7 @@ package com.kodilla.jdbc;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class DbManagerTestSuite {
     @Test
@@ -18,7 +16,7 @@ public class DbManagerTestSuite {
         Assert.assertNotNull(dbManager.getConnection());
     }
 
-    @Test
+   /* @Test
     public void testSelectUsers() throws SQLException {
         //Given
         DbManager dbManager = DbManager.getInstance();
@@ -65,6 +63,6 @@ public class DbManagerTestSuite {
         rs.close();
         statement.close();
         Assert.assertEquals(1, counter);
-    }
+    }*/
 }
 

@@ -38,12 +38,12 @@ public class StoredProcTestSuite {
         String sqlProduceCall = "CALL UpdateBestsellers()";
         statement.execute(sqlProduceCall);
         //Then
-        String sqlCheckTable = "SELECT COUNT(*) AS HOW_MANY FROM BOOKS WERE BESTSELLER=1";
+        String sqlCheckTable = "SELECT COUNT(*) AS HOW_MANY FROM BOOKS WHERE BESTSELLER=1";
         ResultSet rs = statement.executeQuery(sqlCheckTable);
         int howMany = -1;
         if (rs.next()) {
             howMany = rs.getInt("HOW_MANY");
         }
-        assertEquals(4, howMany);
+        assertEquals(5, howMany);
     }
 }
